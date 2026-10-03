@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Siti Laundry – Laundry Kiloan Sukanagara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#eaf3f7;--card:#fff;--teal:#0b7f96;--teal-d:#086578;--navy:#14195a;--text:#1b2330;--muted:#53606f;--line:#d3e0e7;--soft:#e1f0f4;--on-teal:#fff;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a24;--card:#142634;--teal:#2bb3cc;--teal-d:#1f9cb4;--navy:#cfd6ff;--text:#e8eef3;--muted:#a9b8c5;--line:#27404f;--soft:#1a3342;--on-teal:#06222b}}
+:root[data-theme="dark"]{--bg:#0e1a24;--card:#142634;--teal:#2bb3cc;--teal-d:#1f9cb4;--navy:#cfd6ff;--text:#e8eef3;--muted:#a9b8c5;--line:#27404f;--soft:#1a3342;--on-teal:#06222b}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);scroll-behavior:smooth;height:auto}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.6}
+a{color:inherit}
+.w{max-width:1000px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.logo{font-weight:700;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:10px;letter-spacing:.02em}
+.logo i{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--teal);color:var(--on-teal);font-style:normal;font-family:'Anton',Impact,sans-serif;font-size:18px}
+.links{display:flex;gap:22px;font-size:14px;font-weight:500}
+.links a{text-decoration:none;color:var(--muted)}
+.links a:hover{color:var(--teal)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--teal);color:var(--on-teal);border-radius:999px;padding:11px 22px;font-weight:600;font-size:15px;text-decoration:none;border:0;cursor:pointer;transition:background .15s}
+.btn:hover{background:var(--teal-d)}
+.btn.sm{padding:8px 16px;font-size:14px}
+.btn.ghost{background:transparent;color:var(--teal);box-shadow:inset 0 0 0 2px var(--teal)}
+.btn.ghost:hover{background:var(--soft)}
+@media(max-width:720px){.links{display:none}}
+
+/* hero */
+.hero{padding:56px 20px 40px;display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+.hero h1{font-family:'Anton',Impact,'Arial Narrow',sans-serif;font-weight:400;color:var(--teal);font-size:clamp(64px,13vw,128px);line-height:.95;margin:0;letter-spacing:.01em}
+.hero h2{font-size:clamp(20px,4.4vw,32px);color:var(--navy);margin:10px 0 14px;line-height:1.25;letter-spacing:.03em}
+.hero p{color:var(--muted);margin:0 0 24px;max-width:46ch}
+.acts{display:flex;gap:12px;flex-wrap:wrap}
+.facts{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:6px 22px}
+.facts div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.facts div:last-child{border:0}
+.facts span{color:var(--muted)}
+.facts b{color:var(--navy);text-align:right}
+@media(max-width:820px){.hero{grid-template-columns:1fr;padding-top:32px;gap:28px}}
+
+/* sections */
+section{padding:44px 0}
+.t{font-size:clamp(24px,5vw,34px);color:var(--navy);margin:0 0 6px;line-height:1.2}
+.lead{color:var(--muted);margin:0 0 28px}
+
+/* price cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:14px}
+.card h3{margin:0;font-size:18px;color:var(--navy);line-height:1.3}
+.min{align-self:flex-start;background:var(--soft);color:var(--teal);font-size:13px;font-weight:600;padding:3px 12px;border-radius:999px}
+.tier{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-top:12px;border-top:1px dashed var(--line)}
+.tier small{display:block;color:var(--muted);font-size:13px}
+.tier strong{font-size:15px;color:var(--navy)}
+.tier em{font-style:normal;font-weight:700;font-size:20px;color:var(--teal);white-space:nowrap}
+.tier em u{text-decoration:none;font-size:13px;font-weight:500;color:var(--muted)}
+.card.wide{grid-column:span 2}
+.card.wide .tier em{font-size:17px;text-align:right;white-space:normal}
+@media(max-width:860px){.cards{grid-template-columns:repeat(2,1fr)}.card.wide{grid-column:span 2}}
+@media(max-width:560px){.cards{grid-template-columns:1fr}.card.wide{grid-column:auto}}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s;padding:0;margin:0;list-style:none}
+.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 22px 22px 22px}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--teal);color:var(--on-teal);font-weight:700;margin-bottom:12px}
+.steps b{display:block;color:var(--navy);margin-bottom:4px}
+.steps span{color:var(--muted);font-size:14px}
+@media(max-width:700px){.steps{grid-template-columns:1fr}}
+
+/* contact */
+.contact{background:var(--teal);color:var(--on-teal);border-radius:28px;padding:36px;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
+.contact h2{margin:0 0 8px;font-size:clamp(22px,4.5vw,30px);line-height:1.25}
+.contact p{margin:0;opacity:.92}
+.contact .btn{background:var(--on-teal);color:var(--teal)}
+.contact .btn:hover{background:var(--card)}
+.contact .acts{justify-content:flex-end}
+@media(max-width:760px){.contact{grid-template-columns:1fr;padding:28px 22px}.contact .acts{justify-content:flex-start}}
+footer{padding:28px 0 40px;text-align:center;color:var(--muted);font-size:13px}
+
+/* jam buka */
+.jam{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
+.status{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;display:flex;flex-direction:column;justify-content:center;gap:6px}
+.badge{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:999px;font-weight:600;font-size:14px;background:var(--soft);color:var(--muted)}
+.badge::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.badge.on{background:#d9f3e3;color:#13693a}
+.badge.off{background:#fde3e0;color:#a32a1f}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .badge.on{background:#12382a;color:#6fe0a0}:root:not([data-theme="light"]) .badge.off{background:#40201d;color:#ff9a8f}}
+:root[data-theme="dark"] .badge.on{background:#12382a;color:#6fe0a0}
+:root[data-theme="dark"] .badge.off{background:#40201d;color:#ff9a8f}
+.status .big{font-size:clamp(26px,5vw,36px);font-weight:700;color:var(--navy);line-height:1.2;margin-top:8px}
+.status p{margin:0;color:var(--muted);font-size:14px}
+.days{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:6px 22px;margin:0;list-style:none}
+.days li{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px}
+.days li:last-child{border:0}
+.days li.today{color:var(--teal);font-weight:700}
+@media(max-width:700px){.jam{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="w">
+  <a class="logo" href="#atas"><i>S</i>Siti Laundry</a>
+  <div class="links"><a href="#harga">Harga</a><a href="#jam">Jam Buka</a><a href="#cara">Cara Pesan</a><a href="#kontak">Lokasi</a></div>
+  <a class="btn sm" href="https://wa.me/6281218581331" target="_blank" rel="noopener">Hubungi</a>
+</div></nav>
+
+<main id="atas">
+<div class="w hero">
+  <div>
+    <h1>PRICELIST</h1>
+    <h2>LAUNDRY KILOAN</h2>
+    <p>Cucian bersih, wangi, dan rapi dengan harga bersahabat. Pilih layanan reguler atau kilat sesuai kebutuhan Anda.</p>
+    <div class="acts">
+      <a class="btn" href="#harga">Lihat harga</a>
+      <a class="btn ghost" href="https://maps.app.goo.gl/FVnPZ22TDGka59bHA" target="_blank" rel="noopener">Lokasi kami</a>
+    </div>
+  </div>
+  <div class="facts" aria-label="Ringkasan">
+    <div><span>Minimal cuci</span><b>2 kg</b></div>
+    <div><span>Paling cepat</span><b>Setrika 6 jam</b></div>
+    <div><span>Mulai dari</span><b>Rp 6.000/kg</b></div>
+    <div><span>Jam buka</span><b>Setiap hari 07.30–20.55</b></div>
+    <div><span>Lokasi</span><b>Kp. Babakan, Ds. Sukanagara</b></div>
+  </div>
+</div>
+
+<section id="harga"><div class="w">
+  <h2 class="t">Daftar harga</h2>
+  <p class="lead">Harga per kilogram. Durasi lebih cepat, harga sedikit lebih tinggi.</p>
+  <div class="cards">
+    <article class="card">
+      <h3>Cuci + Setrika Reguler</h3><span class="min">Minimal 2 kg</span>
+      <div class="tier"><div><strong>Kilat</strong><small>Selesai 24 jam</small></div><em>Rp 10.000<u>/kg</u></em></div>
+      <div class="tier"><div><strong>Reguler</strong><small>Selesai 3 hari</small></div><em>Rp 8.000<u>/kg</u></em></div>
+    </article>
+    <article class="card">
+      <h3>Cuci Kering</h3><span class="min">Minimal 2 kg</span>
+      <div class="tier"><div><strong>Kilat</strong><small>Selesai 24 jam</small></div><em>Rp 8.000<u>/kg</u></em></div>
+      <div class="tier"><div><strong>Reguler</strong><small>Selesai 3 hari</small></div><em>Rp 6.000<u>/kg</u></em></div>
+    </article>
+    <article class="card">
+      <h3>Setrika</h3><span class="min">Minimal 2 kg</span>
+      <div class="tier"><div><strong>Kilat</strong><small>Selesai 6 jam</small></div><em>Rp 9.000<u>/kg</u></em></div>
+      <div class="tier"><div><strong>Reguler</strong><small>Selesai 2 hari</small></div><em>Rp 6.000<u>/kg</u></em></div>
+    </article>
+    <article class="card">
+      <h3>Cuci Sprei &amp; Bedcover</h3><span class="min">Hitungan satuan</span>
+      <div class="tier"><div><strong>Dihitung 1 (satuan)</strong><small>Selesai 3 hari</small></div><em>Rp 12.000<u></u></em></div>
+    </article>
+    <article class="card wide">
+      <h3>Cuci Boneka &amp; Karpet</h3><span class="min">Hitungan satuan</span>
+      <div class="tier"><div><strong>Dihitung 1 (satuan)</strong><small>Selesai 3 hari</small></div><em>Tergantung besar/kecil</em></div>
+    </article>
+  </div>
+</div></section>
+
+<section id="jam"><div class="w">
+  <h2 class="t">Jam buka</h2>
+  <p class="lead">Buka setiap hari, termasuk Minggu.</p>
+  <div class="jam">
+    <div class="status">
+      <span class="badge" id="badge">Memeriksa…</span>
+      <div class="big" id="big">07.30–20.55</div>
+      <p id="info">Waktu Indonesia Barat (WIB)</p>
+    </div>
+    <ul class="days" id="days">
+      <li data-d="1"><span>Senin</span><b>07.30–20.55</b></li>
+      <li data-d="2"><span>Selasa</span><b>07.30–20.55</b></li>
+      <li data-d="3"><span>Rabu</span><b>07.30–20.55</b></li>
+      <li data-d="4"><span>Kamis</span><b>07.30–20.55</b></li>
+      <li data-d="5"><span>Jumat</span><b>07.30–20.55</b></li>
+      <li data-d="6"><span>Sabtu</span><b>07.30–20.55</b></li>
+      <li data-d="0"><span>Minggu</span><b>07.30–20.55</b></li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="cara"><div class="w">
+  <h2 class="t">Cara pesan</h2>
+  <p class="lead">Tanpa ribet, cukup datang langsung ke outlet.</p>
+  <ol class="steps">
+    <li><b>Datang ke outlet</b><span>Bawa cucian Anda ke Kp. Babakan, Ds. Sukanagara.</span></li>
+    <li><b>Timbang &amp; pilih layanan</b><span>Cucian ditimbang, lalu pilih layanan dan durasi yang diinginkan.</span></li>
+    <li><b>Ambil cucian</b><span>Datang kembali sesuai estimasi waktu selesai.</span></li>
+  </ol>
+</div></section>
+
+<section id="kontak"><div class="w">
+  <div class="contact">
+    <div>
+      <h2>Ada pertanyaan? Hubungi Siyu</h2>
+      <p>Kp. Babakan RT/RW 09/02, Ds. Sukanagara, Kec. Cikupa, Kab. Tangerang<br>WhatsApp / Telepon: 0812-1858-1331</p>
+    </div>
+    <div class="acts">
+      <a class="btn" href="https://wa.me/6281218581331?text=Halo%20Siti%20Laundry%2C%20saya%20mau%20tanya%20layanan%20laundry." target="_blank" rel="noopener">Chat WhatsApp</a>
+      <a class="btn" href="https://maps.app.goo.gl/FVnPZ22TDGka59bHA" target="_blank" rel="noopener">Buka peta</a>
+    </div>
+  </div>
+</div></section>
+</main>
+<footer>&copy; Siti Laundry. Harga dapat berubah sewaktu-waktu.</footer>
+<script>
+(function(){
+  var OPEN=7*60+30, CLOSE=20*60+55;
+  var now, wd, m;
+  try{
+    var p=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Jakarta',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+    var g=function(t){return p.filter(function(x){return x.type===t})[0].value};
+    wd={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[g('weekday')];
+    m=(parseInt(g('hour'),10)%24)*60+parseInt(g('minute'),10);
+  }catch(e){var d=new Date();wd=d.getDay();m=d.getHours()*60+d.getMinutes();}
+  var li=document.querySelector('#days li[data-d="'+wd+'"]');
+  if(li)li.classList.add('today');
+  var b=document.getElementById('badge'),big=document.getElementById('big'),info=document.getElementById('info');
+  if(m>=OPEN&&m<CLOSE){
+    b.textContent='Buka sekarang';b.className='badge on';
+    big.textContent='Tutup pukul 20.55';info.textContent='Silakan datang, kami siap melayani.';
+  }else{
+    b.textContent='Tutup';b.className='badge off';
+    big.textContent='Buka pukul 07.30';info.textContent=m<OPEN?'Buka hari ini mulai 07.30 WIB.':'Buka kembali besok pukul 07.30 WIB.';
+  }
+})();
+</script>
+</body>
+</html>
